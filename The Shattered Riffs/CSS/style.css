@@ -1,0 +1,370 @@
+:root {
+    --primary-color: #540d0a; 
+    background-color: #1a1a2e;
+    --dark-bg-color: #000000;
+    --dark-text-color: #e0e0e0;
+    --light-text-color: #333;
+    --gradient-start: #1d1c1f;
+    --gradient-end: #000000;   
+
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+
+    --max-width-container: 1200px;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+}
+
+/* -------------------- Base y Reseteo -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces internos */
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--dark-text-color);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    background-attachment: fixed; /* Mantiene el gradiente fijo al hacer scroll */
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal no deseado */
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--dark-text-color);
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efecto para resaltar títulos */
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.4rem; }
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Elimina espacio extra debajo de las imágenes */
+}
+
+/* -------------------- Clases de Utilidad -------------------- */
+.container {
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm); /* Relleno lateral para móviles */
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--dark-bg-color); /* Texto oscuro en botón brillante */
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--dark-text-color); /* Texto claro en botón brillante */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* -------------------- Header y Navegación -------------------- */
+header {
+    background-color: #000000;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: var(--dark-text-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: var(--spacing-md);
+}
+
+.main-nav a {
+    color: var(--dark-text-color);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.main-nav a::after { /* Efecto subrayado al pasar el ratón */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after { /* Clase active para resaltar la sección actual */
+    width: 100%;
+}
+
+/* Menú hamburguesa (oculto por defecto en desktop) */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 1001; /* Asegura que esté por encima de la navegación */
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* -------------------- Hero Section -------------------- */
+.hero-section {
+    position: relative;
+    height: 90vh; /* Altura del viewport */
+    background-image: url("../IMAGENES/rockeros.jpg");
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--dark-text-color);
+    position: relative;
+    overflow: hidden; /* Para contener cualquier animación o efecto de fondo */
+    box-shadow: inset 0 -100px 100px rgba(0,0,0,0.8); /* Oscurece la parte inferior */
+}
+
+.hero-section::before { /* Overlay para mejorar contraste del texto */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen de fondo */
+    z-index: 1;
+}
+
+.hero-content {
+    background-image: url("../IMAGENES/rockeros.jpg") no-repeat center center/cover; /* Asegúrate de tener esta imagen */
+    position: relative;
+
+    z-index: 2; /* Asegura que el contenido esté sobre el overlay */
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    font-weight: 300;
+}
+
+/* -------------------- Secciones Generales -------------------- */
+section {
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    position: relative;
+}
+
+section:nth-of-type(even) { /* Estilo alterno para secciones */
+    background-color: rgba(0, 0, 0, 0.3); /* Ligeramente más oscuro o diferente */
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* -------------------- Dates Section (Tabla) -------------------- */
+.dates-section h3 {
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+}
+
+.dates-section p {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.table-responsive {
+
+    margin: 0 auto; /* Centra la tabla */
+    max-width: 100%; /* Asegura que la tabla no desborde */
+}
+
+.dates-section table {
+    width: 90%; /* Ancho predeterminado para desktop */
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.1); /* color de la tabla */
+    border-radius: 8px;
+    overflow: hidden; /* Para que border-radius funcione en celdas */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dates-section th,
+.dates-section td {
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+}
+
+.dates-section th {
+    background-color: var(--secondary-color);
+    color: var(--dark-text-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.dates-section tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.dates-section tr:hover {
+    background-color: rgba(var(--primary-color), 0.2); /* Efecto hover en filas */
+}
+
+
+/* -------------------- About Section -------------------- */
+.about-section h3 {
+    color: var(--primary-color);
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    gap: var(--spacing-md);
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    margin-top: var(--spacing-lg);
+}
+
+.about-text, .about-features {
+    flex: 1; /* Permite que ambos tomen espacio equitativo */
+    min-width: 300px; /* Ancho mínimo antes de envolverse */
+    padding: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.05); /* Fondo ligeramente transparente */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.about-features h4 {
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.about-features ul {
+    margin-top: var(--spacing-sm);
+}
+
+.about-features li {
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.about-features li i { /* Estilo para los iconos */
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+/* -------------------- Gallery Section (Grid Layout) -------------------- */
+.gallery-section h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.gallery-section p {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px; /* Espacio más pequeño para imágenes */
+    margin-top: var(--spacing-md);
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05); /* Zoom ligero al pasar el ratón */
+}
