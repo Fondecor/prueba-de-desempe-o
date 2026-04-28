@@ -1,9 +1,6 @@
 # 🎸 Linkin Park Fan Page
 A static website dedicated to the career, discography, and legacy of the band Linkin Park.
-
-## 🔗 Demo
-> [Link to your website on GitHub Pages or Vercel]
-
+]
 ## 🛠️ Technologies
 * **HTML5:** Semantic content structure.
 
