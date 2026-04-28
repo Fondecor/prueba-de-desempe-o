@@ -1,29 +1,33 @@
 # 🎸 Linkin Park Fan Page
-Un sitio web estático dedicado a la trayectoria, discografía y el legado de la banda Linkin Park.
+A static website dedicated to the career, discography, and legacy of the band Linkin Park.
 
 ## 🔗 Demo
-> [Enlace a tu sitio web en GitHub Pages o Vercel]
+> [Link to your website on GitHub Pages or Vercel]
 
-## 🛠️ Tecnologías
-*   **HTML5:** Estructura semántica del contenido.
-*   **CSS3:** Estilos personalizados, Flexbox y Grid para el diseño responsivo.
+## 🛠️ Technologies
+* **HTML5:** Semantic content structure.
 
-## 📂 Estructura del Proyecto
-*   `index.html`: Página principal (Biografía y últimas noticias).
-*   `discografia.html`: Listado de álbumes desde *Hybrid Theory* hasta *One More Light*.
-*   `galeria.html`: Colección de imágenes de la banda.
-*   `/css`: Carpeta con las hojas de estilo.
-*   `/assets`: Imágenes, iconos y recursos multimedia.
+* **CSS3:** Custom styles, Flexbox, and Grid for responsive design.
 
-## 🚀 Cómo ver el proyecto localmente
-1. Descarga o clona este repositorio:
-   ```bash
-   git clone https://github.com
-   ```
-2. Abre el archivo `index.html` en tu navegador preferido.
+## 📂 Project Structure
+* `index.html`: Homepage (Biography and latest news).
 
-## ✒️ Autor
-* **Jenrry monsalve** - [@tu-usuario](https://github.com)
+* `discografia.html`: Album listing from *Hybrid Theory* to *One More Light*.
 
----
-*Nota: Este proyecto fue realizado con fines educativos para practicar maquetación web.*
+* `galeria.html`: Collection of band images.
+
+* `/css`: Folder with stylesheets.
+
+* `/assets`: Images, icons, and multimedia resources.
+
+## 🚀 How to view the project locally
+1. Download or clone this repository:
+
+``git clone https://github.com
+
+``
+2. Open the `index.html` file in your preferred browser.
+
+## ✒️ Author
+* **Jenrry Monsalve**-
+
